@@ -1,0 +1,159 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body, html, .wrapper {
+    height: 100%;
+    background-image: url(../images/back.png);
+    background-size: cover;
+}
+
+.test {
+    font-size: 18px;
+    font-family: monospace;
+    text-align: center;
+}
+
+/* Colors, Position */
+.main {
+    height: 100%;
+    margin: 0 auto 0 auto;
+
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "slider"
+    "content"
+    "footer";
+    grid-template-rows: 145px 380px 10fr 2fr;
+    grid-template-columns: 70%;
+    justify-content: center;
+}
+
+/* Header, Navigation */
+.header {
+    background-color: rgb(233, 206, 55);
+    grid-area: header;
+    text-align: center;
+}
+
+.logo {
+    display: inline-block;
+    height: 100px;
+    margin: 2px 80px;
+}
+
+.navigation {
+    background-color: rgb(153, 133, 161);
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Righteous', cursive;
+}
+
+li {
+    border-right: 1px black solid;
+    flex-grow: 1;
+    list-style-type: none;
+    height: 30px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+li:hover {
+    background-color: rgb(96, 178, 233);
+}
+
+/* Slider */
+.link {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.slider {
+    background-color: rgb(154, 199, 109);
+    grid-area: slider;
+    overflow: hidden;
+}
+
+.out-slide {
+    position: relative;
+    height: 400px;
+    width: 100%; 
+}
+
+.slide {
+    height: 350px;
+    width: 1000px;
+    position: absolute;
+    top: 15px;
+    border-radius: 4%;
+    cursor: pointer;
+}
+
+.slide-1 {
+    left: 180px;
+    background-image: url(../images/eren.jpg);
+    background-size: cover;
+    background-position-y: center;
+}
+
+
+.slide-2 {
+    left: 1500px;
+    background-image: url(../images/mikasa.jpg);
+    background-size: cover;
+    background-position-y: center;
+}
+
+.slide-3 {
+    left: 2820px;
+    background-image: url(../images/armin.jpeg);
+    background-size: cover;
+    background-position-y: center;
+}
+
+.out-slide {
+    animation-name: slide;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slide {
+    0% {
+        right: 0px;
+    }
+
+    50% {
+        right: 1320px;
+    }
+
+    90% {
+        right: 2650px;
+    }
+
+    100% {
+        right: 0px;
+    }
+
+}
+
+.content {
+    background-color: rgb(127, 207, 207);
+    grid-area: content;
+    padding: 10px;
+}
+
+.footer {
+    background-color: darkorange;
+    grid-area: footer;
+    padding: 10px;
+}
+
